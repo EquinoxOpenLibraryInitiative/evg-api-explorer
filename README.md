@@ -28,7 +28,7 @@ rsync -vaHx dist/ /openils/var/web/api-explorer/
 The API explorer can then be found under `https//HOST/api-explorer/`.
 
 If you need to run this app on a host different from your Evergreen server,
-at present some CORS headers need to be set on the Evergreen:
+at present some CORS headers need to be set on the Evergreen end:
 
 ```conf
 <IfModule mod_headers.c>
@@ -41,7 +41,7 @@ at present some CORS headers need to be set on the Evergreen:
 Note that these CORS settings may be more permissive than you would care
 to have in production.
 
-A future version of the explorer may provide proxy so that CORS considerations
+A future version of the explorer may provide a proxy so that CORS considerations
 don't apply.
 
 ## Developing
