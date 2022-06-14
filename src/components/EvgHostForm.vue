@@ -84,13 +84,13 @@ function isArray(val: any): boolean {
     <nav class="navbar navbar-dark sticky-top" style="background-color: #007a54">
         <div class="container-md">
             <a class="navbar-brand">Evergreen API Explorer</a>
-            <form class="d-flex">
+            <form class="d-flex" @submit.prevent="checkConnection">
                 <input v-model="evgHost" placeholder="Evergreen host" aria-label="Evergreen host"
                     class="form-control me-1">
-                <button @click="checkConnection" class="btn btn-sm btn-primary" type="button">Connect to
+                <button class="btn btn-sm btn-primary" type="submit">Connect to
                     Evergreen</button>
             </form>
-            <form class="d-flex">
+            <form class="d-flex" @submit.prevent="fetchApiInfo">
                 <select v-model="selectedService" class="form-control me-1" aria-label="Evergreen service"
                     :disabled="!connectionOK">
                     <option value="open-ils.acq">open-ils.acq</option>
@@ -116,7 +116,7 @@ function isArray(val: any): boolean {
                 </select>
                 <input v-model="searchFilter" class="form-control me-1" placeholder="Method filter"
                     aria-label="Method filter" :disabled="!connectionOK">
-                <button @click="fetchApiInfo" class="btn btn-sm btn-info" :disabled="!connectionOK" type="button">Fetch
+                <button class="btn btn-sm btn-info" :disabled="!connectionOK" type="submit">Fetch
                     API
                     information</button>
             </form>
