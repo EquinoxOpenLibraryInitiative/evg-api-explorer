@@ -123,6 +123,10 @@ function isArray(val: any): boolean {
         </div>
     </nav>
 
+    <div v-if="connectionOK" class="container mt-2">
+        <div class="d-flex">Evergreen Version: {{evgVersion}}</div>
+    </div>
+    <hr v-if="connectionOK">
     <div v-if="numResults > 0" class="container">
         <div class="accordion accordion-flush" id="methodAccordion">
             <div class="accordion-item" v-for="(method, index) in methods" :key="method.api_name">
